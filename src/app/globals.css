@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-ivory: #FAF7F2;
+    --bg-blush: #F3E6E0;
+    --text-espresso: #1C1512;
+    --accent-gold: #C9A24B;
+    --accent-gold-light: #DFBE70;
+    --accent-gold-dark: #9F7B28;
+    --accent: #FAF7F2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #FAF7F2;
+    color: #1C1512;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-ivory);
+    color: var(--text-espresso);
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF7F2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C9A24B;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A6802C;
+  }
+
+  ::selection {
+    background-color: #C9A24B;
+    color: #FAF7F2;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Typography classes */
+.font-display {
+  font-family: var(--font-playfair), "Fraunces", Georgia, serif;
+}
+
+.font-serif-luxury {
+  font-family: var(--font-cormorant), "Playfair Display", Georgia, serif;
+}
+
+.font-sans-refined {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Masked text reveal containers */
+.silk-line-container {
+  overflow: hidden;
+  display: block;
+}
+
+.silk-masked-text {
+  display: block;
+  transform: translateY(0);
+}
+
+/* Subtle editorial grain overlay */
+.bg-grain {
+  background-image: radial-gradient(rgba(201, 162, 75, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Gold hairline utilities */
+.gold-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A24B, transparent);
+}
+
+.gold-hairline-solid {
+  border-color: rgba(201, 162, 75, 0.25);
+}
+
+/* Luxury button shimmer effect */
+.shimmer-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-gold::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.8s ease;
+}
+
+.shimmer-gold:hover::after {
+  transform: rotate(30deg) translateX(100%);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
