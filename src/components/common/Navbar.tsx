@@ -90,13 +90,9 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Main Glassmorphic Sticky Header */}
+      {/* Main Pure Dark Luxury Header */}
       <header
-        className={`sticky top-0 left-0 right-0 z-30 transition-all duration-500 ${
-          isScrolled
-            ? "bg-black/60 backdrop-blur-xl py-3 border-b border-white/10 shadow-2xl text-white"
-            : "bg-gradient-to-b from-black/75 via-black/30 to-transparent py-4 text-white"
-        }`}
+        className="sticky top-0 left-0 right-0 z-30 py-3.5 bg-[#140E0E] border-b border-[#C9A24B]/35 shadow-2xl text-white transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Left: Mobile Menu Toggle & Brand Logo */}
@@ -110,10 +106,10 @@ export default function Navbar() {
             </button>
 
             <Link href="/" className="group flex flex-col items-start">
-              <span className="font-display text-2xl sm:text-3xl lg:text-4xl tracking-[0.22em] font-medium leading-none text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+              <span className="font-display text-2xl sm:text-3xl lg:text-4xl tracking-[0.22em] font-medium leading-none text-[#FAF7F2]">
                 ASK
               </span>
-              <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.45em] font-semibold text-[#F5D061] mt-1 drop-shadow">
+              <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.45em] font-bold text-[#F5D061] mt-1">
                 HANDCRAFTED SILKS
               </span>
             </Link>
@@ -125,7 +121,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs uppercase tracking-[0.22em] font-medium transition-all duration-300 relative py-1 text-white/95 hover:text-[#F5D061] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] group"
+                className="text-xs uppercase tracking-[0.22em] font-semibold transition-colors duration-200 relative py-1 text-[#FAF7F2]/90 hover:text-[#F5D061] group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#F5D061] transition-all duration-300 group-hover:w-full" />
@@ -139,7 +135,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setIsCurrencyDropdownOpen(!isCurrencyDropdownOpen)}
-                className="flex items-center gap-1 text-[11px] sm:text-xs uppercase font-medium tracking-wider py-1 px-2.5 rounded-full border border-[#7A0C1E]/20 text-[#7A0C1E] hover:border-[#7A0C1E] transition-all bg-[#7A0C1E]/5"
+                className="flex items-center gap-1 text-[11px] sm:text-xs uppercase font-semibold tracking-wider py-1 px-3 rounded-full border border-[#C9A24B]/40 text-[#DFBE70] bg-[#C9A24B]/15 hover:border-[#F5D061] transition-all"
               >
                 <span>{currency}</span>
                 <ChevronDown className="w-3 h-3 opacity-70" />
@@ -172,7 +168,7 @@ export default function Navbar() {
             {/* Search Button */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 rounded-full hover:bg-black/5 text-[#1C1512] hover:text-[#7A0C1E] transition-colors"
+              className="p-2 rounded-full hover:bg-white/10 text-[#FAF7F2] hover:text-[#F5D061] transition-colors"
               aria-label="Search collection"
             >
               <Search className="w-5 h-5" />
@@ -181,7 +177,7 @@ export default function Navbar() {
             {/* Wishlist Button with badge */}
             <button
               onClick={() => setIsWishlistOpen(true)}
-              className="p-2 rounded-full hover:bg-black/5 text-[#1C1512] hover:text-[#7A0C1E] transition-colors relative"
+              className="p-2 rounded-full hover:bg-white/10 text-[#FAF7F2] hover:text-[#F5D061] transition-colors relative"
               aria-label="View wishlist"
             >
               <Heart className="w-5 h-5" />
