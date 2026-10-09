@@ -84,7 +84,7 @@ npm run start
 - **Varanasi (UP)**: Ghat View Loom Guild, Banaras
 - **Kanchipuram (TN)**: Temple Weaver Street, Kanchi
 - **Hyderabad (TG)**: Jubilee Hills Flagship Atelier & Studio
-- **Concierge**: +91 9********* (+91 98765 43210)
+- **Concierge**: Available via Official Atelier WhatsApp & Support Line
 
 ---
 
